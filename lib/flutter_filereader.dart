@@ -78,28 +78,28 @@ class _FileReaderViewState extends State<FileReaderView> {
         return _loadingWidget();
       }
     } else {
-      return Center(child: Text("不支持的平台"));
+      return Center(child: Text("Nền tảng không được hỗ trợ"));
     }
   }
 
   Widget _unSupportFile() {
     return widget.unSupportFileWidget ??
         Center(
-          child: Text("不支持打开${_fileType(filePath)}类型的文件"),
+          child: Text("Không hỗ trợ mở tệp tin ${_fileType(filePath)}"),
         );
   }
 
   Widget _fileNotFoundFile() {
     return Center(
-      child: Text("文件不存在"),
+      child: Text("Tệp không tồn tại"),
     );
   }
 
   Widget _enginLoadFail() {
-    //最有可能是abi的问题,x5不支持64位的arm架构,所以需要abi过滤为armeabi 或者armv7a
-    //还有可能第一次下载成功,但是加载不成功
+    // Vấn đề rất có thể là abi. X5 không hỗ trợ kiến trúc cánh tay 64 bit, vì vậy bộ lọc abi cần phải là armeabi hoặc armv7a
+     // Cũng có thể lần tải xuống đầu tiên thành công, nhưng việc tải không thành công
     return Center(
-      child: Text("引擎加载失败,请退出重试"),
+      child: Text("Thư viện không tải được,Vui lòng thoát và thử lại"),
     );
   }
 
