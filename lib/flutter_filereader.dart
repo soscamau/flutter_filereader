@@ -96,8 +96,6 @@ class _FileReaderViewState extends State<FileReaderView> {
   }
 
   Widget _enginLoadFail() {
-    // Vấn đề rất có thể là abi. X5 không hỗ trợ kiến trúc cánh tay 64 bit, vì vậy bộ lọc abi cần phải là armeabi hoặc armv7a
-     // Cũng có thể lần tải xuống đầu tiên thành công, nhưng việc tải không thành công
     return Center(
       child: Text("Thư viện không tải được,Vui lòng thoát và thử lại"),
     );
